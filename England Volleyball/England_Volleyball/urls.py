@@ -38,6 +38,10 @@ urlpatterns = [
         },
         name='logout'),
 
+    #api additions
+    url(r'^api-auth/', include('rest_framework.urls'))
+    url(r'^docs/', include('rest_framework_docs.urls')),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
