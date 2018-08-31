@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Admin Stuff
+    'smart_selects',
     # Project Apps
     'accounts',
     'articles',
@@ -59,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'England_Volleyball.urls'
+
+USE_DJANGO_JQUERY = True
 
 TEMPLATES = [
     {

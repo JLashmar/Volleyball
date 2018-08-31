@@ -39,9 +39,3 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Staff(models.Model):
-    club = models.ForeignKey(Club, on_delete=models.CASCADE)
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    position = models.CharField(max_length=100, unique=False)
