@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Project Apps
     'accounts',
     'articles',
+    'clubs',
     # Framework stuff
     'rest_framework',
     'coreapi',

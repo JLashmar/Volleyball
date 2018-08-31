@@ -5,21 +5,17 @@ from django.dispatch import receiver
 
 
 class Role(models.Model):
-    '''
-    The Role entries are managed by the system,
-    automatically created via a Django data migration.
-    '''
     PLAYER = 1
     COACH = 2
     CLUB_SECRETARY = 3
     CLUB_MEDIA = 4
-    ADMIN = 5
+    ADMINISTRATOR = 5
     ROLE_CHOICES = (
         (PLAYER, 'player'),
         (COACH, 'coach'),
         (CLUB_SECRETARY, 'club secretary'),
         (CLUB_MEDIA, 'club media'),
-        (ADMIN, 'admin'),
+        (ADMINISTRATOR, 'Administrator'),
     )
 
     id = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, primary_key=True)
@@ -34,3 +30,6 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     #team = models.ManyToManyField(Team)
+
+    def __str__(self):
+        return '%s %s' % (self.user.first_name, self.user.last_name)

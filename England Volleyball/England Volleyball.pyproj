@@ -51,6 +51,13 @@
     <Compile Include="articles\tests.py" />
     <Compile Include="articles\views.py" />
     <Compile Include="articles\__init__.py" />
+    <Compile Include="clubs\admin.py" />
+    <Compile Include="clubs\apps.py" />
+    <Compile Include="clubs\migrations\__init__.py" />
+    <Compile Include="clubs\models.py" />
+    <Compile Include="clubs\tests.py" />
+    <Compile Include="clubs\views.py" />
+    <Compile Include="clubs\__init__.py" />
     <Compile Include="England_Volleyball\old_settings.py" />
     <Compile Include="England_Volleyball\settings\base.py" />
     <Compile Include="England_Volleyball\settings\local.py" />
@@ -71,6 +78,9 @@
     <Folder Include="articles\api\__pycache__\" />
     <Folder Include="articles\migrations\" />
     <Folder Include="articles\templates\" />
+    <Folder Include="clubs\" />
+    <Folder Include="clubs\migrations\" />
+    <Folder Include="clubs\templates\" />
     <Folder Include="England_Volleyball\" />
     <Folder Include="England_Volleyball\settings\" />
     <Folder Include="England_Volleyball\settings\__pycache__\" />
@@ -83,6 +93,7 @@
     <Content Include="articles\api\__pycache__\views.cpython-36.pyc" />
     <Content Include="articles\api\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="articles\templates\index.html" />
+    <Content Include="clubs\templates\index.html" />
     <Content Include="England_Volleyball\settings\__pycache__\base.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\local.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\production.cpython-36.pyc" />
