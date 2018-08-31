@@ -31,6 +31,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="accounts\admin.py" />
+    <Compile Include="accounts\apps.py" />
+    <Compile Include="accounts\migrations\__init__.py" />
+    <Compile Include="accounts\models.py" />
+    <Compile Include="accounts\tests.py" />
+    <Compile Include="accounts\views.py" />
+    <Compile Include="accounts\__init__.py" />
     <Compile Include="England_Volleyball\old_settings.py" />
     <Compile Include="England_Volleyball\settings\base.py" />
     <Compile Include="England_Volleyball\settings\local.py" />
@@ -41,28 +48,21 @@
     <Compile Include="England_Volleyball\settings.py" />
     <Compile Include="England_Volleyball\urls.py" />
     <Compile Include="England_Volleyball\wsgi.py" />
-    <Compile Include="Profile\admin.py" />
-    <Compile Include="Profile\apps.py" />
-    <Compile Include="Profile\migrations\__init__.py" />
-    <Compile Include="Profile\models.py" />
-    <Compile Include="Profile\tests.py" />
-    <Compile Include="Profile\views.py" />
-    <Compile Include="Profile\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="accounts\" />
+    <Folder Include="accounts\migrations\" />
+    <Folder Include="accounts\templates\" />
     <Folder Include="England_Volleyball\" />
     <Folder Include="England_Volleyball\settings\" />
     <Folder Include="England_Volleyball\settings\__pycache__\" />
-    <Folder Include="Profile\" />
-    <Folder Include="Profile\migrations\" />
-    <Folder Include="Profile\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accounts\templates\index.html" />
     <Content Include="England_Volleyball\settings\__pycache__\base.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\local.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\production.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\__init__.cpython-36.pyc" />
-    <Content Include="Profile\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
   </ItemGroup>
