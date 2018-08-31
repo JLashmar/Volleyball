@@ -39,6 +39,12 @@
     <Compile Include="accounts\views.py" />
     <Compile Include="accounts\__init__.py" />
     <Compile Include="articles\admin.py" />
+    <Compile Include="articles\api\permissions.py" />
+    <Compile Include="articles\api\serializers.py" />
+    <Compile Include="articles\api\tests.py" />
+    <Compile Include="articles\api\urls.py" />
+    <Compile Include="articles\api\views.py" />
+    <Compile Include="articles\api\__init__.py" />
     <Compile Include="articles\apps.py" />
     <Compile Include="articles\migrations\__init__.py" />
     <Compile Include="articles\models.py" />
@@ -61,6 +67,8 @@
     <Folder Include="accounts\migrations\" />
     <Folder Include="accounts\templates\" />
     <Folder Include="articles\" />
+    <Folder Include="articles\api\" />
+    <Folder Include="articles\api\__pycache__\" />
     <Folder Include="articles\migrations\" />
     <Folder Include="articles\templates\" />
     <Folder Include="England_Volleyball\" />
@@ -69,6 +77,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accounts\templates\index.html" />
+    <Content Include="articles\api\__pycache__\permissions.cpython-36.pyc" />
+    <Content Include="articles\api\__pycache__\serializers.cpython-36.pyc" />
+    <Content Include="articles\api\__pycache__\urls.cpython-36.pyc" />
+    <Content Include="articles\api\__pycache__\views.cpython-36.pyc" />
+    <Content Include="articles\api\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="articles\templates\index.html" />
     <Content Include="England_Volleyball\settings\__pycache__\base.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\local.cpython-36.pyc" />
