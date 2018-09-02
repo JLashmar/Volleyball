@@ -68,6 +68,13 @@
     <Compile Include="England_Volleyball\settings.py" />
     <Compile Include="England_Volleyball\urls.py" />
     <Compile Include="England_Volleyball\wsgi.py" />
+    <Compile Include="sponsors\admin.py" />
+    <Compile Include="sponsors\apps.py" />
+    <Compile Include="sponsors\migrations\__init__.py" />
+    <Compile Include="sponsors\models.py" />
+    <Compile Include="sponsors\tests.py" />
+    <Compile Include="sponsors\views.py" />
+    <Compile Include="sponsors\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="accounts\" />
@@ -84,6 +91,9 @@
     <Folder Include="England_Volleyball\" />
     <Folder Include="England_Volleyball\settings\" />
     <Folder Include="England_Volleyball\settings\__pycache__\" />
+    <Folder Include="sponsors\" />
+    <Folder Include="sponsors\migrations\" />
+    <Folder Include="sponsors\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="accounts\templates\index.html" />
@@ -98,8 +108,10 @@
     <Content Include="England_Volleyball\settings\__pycache__\local.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\production.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="layout.docx" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="sponsors\templates\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
