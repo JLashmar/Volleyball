@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Framework stuff
     'rest_framework',
     'coreapi',
+    'jquery',
 ]
 
 MIDDLEWARE = [
