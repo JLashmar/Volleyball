@@ -25,7 +25,7 @@ class ClubSponsor(models.Model):
         return '%s - %s' % (self.club, self.sponsor)
 
     def get_api_url(self, request=None):
-        return api_reverse('api-sponsors:sponsor-rud', kwargs={'pk': self.pk}, request=request)
+        return api_reverse('api-sponsors:clubsponsor-rud', kwargs={'pk': self.pk}, request=request)
 
 
 class TeamSponsor(models.Model):
@@ -37,7 +37,7 @@ class TeamSponsor(models.Model):
         return '%s - %s' % (self.team, self.sponsor)
 
     def get_api_url(self, request=None):
-        return api_reverse('api-sponsors:sponsor-rud', kwargs={'pk': self.pk}, request=request)
+        return api_reverse('api-sponsors:teamsponsor-rud', kwargs={'pk': self.pk}, request=request)
 
 
 class PlayerSponsor(models.Model):
@@ -49,4 +49,4 @@ class PlayerSponsor(models.Model):
         return '%s - %s' % (self.player, self.sponsor)
 
     def get_api_url(self, request=None):
-        return api_reverse('api-sponsors:sponsor-rud', kwargs={'pk': self.pk}, request=request)
+        return api_reverse('api-sponsors:playersponsor-rud', kwargs={'pk': self.pk}, request=request)
