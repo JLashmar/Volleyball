@@ -32,3 +32,9 @@ class Post(models.Model):
 
     def get_api_url(self, request=None):
         return api_reverse('api-posts:post-rud', kwargs={'pk': self.pk}, request=request)
+
+class Announcement(models.Model):
+    message = models.TextField(max_length=250)
+    #type = selector field. Select between "Club Announcement and an internal announcment"
+    #club ID = request.user.club
+    #email_list = no idea. However the email system should work needs to be intergrated into this.

@@ -9,6 +9,7 @@ class Club(models.Model):
     address2 = models.CharField(max_length=100, blank=True, null=True)
     town = models.CharField(max_length=100, blank=True, null=True)
     post_code = models.CharField(max_length=100, blank=True, null=True)
+    logo = models.ImageField(null=True)
 
     class Meta:
         ordering = ['-name']
@@ -20,6 +21,7 @@ class Club(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=100, unique=False)
     club = models.ForeignKey(Club, on_delete=models.PROTECT)
+    logo = models.ImageField(null=True)
     MEN = 'Men'
     WOMEN = 'Women'
     MIXED = 'Mixed'

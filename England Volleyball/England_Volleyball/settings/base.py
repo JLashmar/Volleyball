@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Admin Stuff
     'smart_selects',
-
     # Project Apps
     'accounts',
     'articles',
