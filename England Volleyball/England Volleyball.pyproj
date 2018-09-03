@@ -63,6 +63,13 @@
     <Compile Include="England_Volleyball\settings\local.py" />
     <Compile Include="England_Volleyball\settings\production.py" />
     <Compile Include="England_Volleyball\settings\__init__.py" />
+    <Compile Include="leagues\admin.py" />
+    <Compile Include="leagues\apps.py" />
+    <Compile Include="leagues\migrations\__init__.py" />
+    <Compile Include="leagues\models.py" />
+    <Compile Include="leagues\tests.py" />
+    <Compile Include="leagues\views.py" />
+    <Compile Include="leagues\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="England_Volleyball\__init__.py" />
     <Compile Include="England_Volleyball\settings.py" />
@@ -91,6 +98,9 @@
     <Folder Include="England_Volleyball\" />
     <Folder Include="England_Volleyball\settings\" />
     <Folder Include="England_Volleyball\settings\__pycache__\" />
+    <Folder Include="leagues\" />
+    <Folder Include="leagues\migrations\" />
+    <Folder Include="leagues\templates\" />
     <Folder Include="sponsors\" />
     <Folder Include="sponsors\migrations\" />
     <Folder Include="sponsors\templates\" />
@@ -109,6 +119,7 @@
     <Content Include="England_Volleyball\settings\__pycache__\production.cpython-36.pyc" />
     <Content Include="England_Volleyball\settings\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="layout.docx" />
+    <Content Include="leagues\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="sponsors\templates\index.html" />
