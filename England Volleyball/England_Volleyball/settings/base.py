@@ -39,18 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Admin Stuff
-    'smart_selects',
+    
     # Project Apps
     'accounts',
     'articles',
     'clubs',
+    'fixtures',
     'leagues',
     'sponsors',
     # Framework stuff
     'rest_framework',
     'coreapi',
     'jquery',
+
 ]
 
 MIDDLEWARE = [

@@ -9,8 +9,8 @@ from .views import(
 app_name = 'api-sponsors'
 
 urlpatterns = [
-    path('', SponsorAPIView.as_view(), name='sponsor-listcreate'),
-    path('<int:pk>/', SponsorRudView.as_view(), name='sponsor-rud'),
+    path('sponsor/', SponsorAPIView.as_view(), name='sponsor-listcreate'),
+    path('sponsor/<int:pk>/', SponsorRudView.as_view(), name='sponsor-rud'),
     # clubs
     path('club/', ClubSponsorAPIView.as_view(), name='clubsponsor-listcreate'),
     path('club/<int:pk>/', ClubSponsorRudView.as_view(), name='clubsponsor-rud'),

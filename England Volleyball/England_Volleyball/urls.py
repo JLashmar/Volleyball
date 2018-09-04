@@ -19,9 +19,11 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('schema/', schema_view),
     path('api-frontend/', include_docs_urls(title='England Vollyball API', public=False)),
-    #api lists
+    # api lists
+    path('api/clubs/', include('clubs.api.urls')),
     path('api/posts/', include('articles.api.urls')),
     path('api/profiles/', include('accounts.api.urls')),
+    path('api/leagues/', include('leagues.api.urls')),
     path('api/sponsors/', include('sponsors.api.urls')),
     path('api/auth/login/', obtain_jwt_token, name='api-login')
     # Uncomment the admin/doc line below to enable admin documentation:
