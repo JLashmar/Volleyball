@@ -1,9 +1,15 @@
 from django.contrib import admin
-from .models import Match, MatchData, Continent, Country, Location
+from .models import Match, MatchData, Continent, Country, Location, Publication, Writer, Book
 
 admin.site.register(Continent)
 admin.site.register(Country)
 admin.site.register(Location)
+
+# book stuff
+
+admin.site.register(Publication)
+admin.site.register(Writer)
+admin.site.register(Book)
 
 
 @admin.register(Match)

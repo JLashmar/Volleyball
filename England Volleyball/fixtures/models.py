@@ -4,7 +4,7 @@ from accounts.models import Profile
 from clubs.models import Team
 from leagues.models import League
 
-from smart_selects.db_fields import ChainedForeignKey
+from smart_selects.db_fields import ChainedForeignKey, ChainedManyToManyField
 from rest_framework.reverse import reverse as api_reverse
 
 
@@ -56,3 +56,34 @@ class Location(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.continent, self.country)
+
+# more test
+
+
+class Publication(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Writer(models.Model):
+    name = models.CharField(max_length=255)
+    publications = models.ManyToManyField('Publication', blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Book(models.Model):
+    publication = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    writer = ChainedManyToManyField(
+        Writer,
+        verbose_name='writer',
+        chained_field="publication",
+        chained_model_field="publications",
+        horizontal=True)
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
