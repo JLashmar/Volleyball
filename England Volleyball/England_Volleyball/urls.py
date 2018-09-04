@@ -1,3 +1,5 @@
+from django.conf import settings
+
 from datetime import datetime
 from django.conf.urls import url
 
@@ -11,8 +13,13 @@ from rest_framework_jwt.views import obtain_jwt_token
 
 schema_view = get_schema_view(title='England Vollyball API')
 
+from django.conf.urls.static import static
+
 
 urlpatterns = [
+    # web pages
+    path('', include('articles.urls')),
+    # admin related things
     path('admin/', admin.site.urls),
     path('chaining/', include('smart_selects.urls')),
     # api additions
@@ -30,3 +37,7 @@ urlpatterns = [
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

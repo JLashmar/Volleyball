@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # Project Apps
     'accounts',
     'articles',
@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'coreapi',
     'jquery',
-
+    # website things
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,7 @@ USE_DJANGO_JQUERY = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.dirname(os.path.join(BASE_DIR, "./templates/"))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
