@@ -2,6 +2,7 @@ from django.db import models
 from sponsors.models import Sponsor
 from accounts.models import Profile
 from clubs.models import Team
+from smart_selects.db_fields import ChainedForeignKey, ChainedManyToManyField
 from rest_framework.reverse import reverse as api_reverse
 
 
@@ -73,7 +74,15 @@ class LeagueTable(models.Model):
 
 class LeagueTableData(models.Model):
     league = models.ForeignKey(LeagueTable, on_delete=models.CASCADE)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE, default="1")
+    #team = models.ForeignKey(Team, on_delete=models.CASCADE, default="1")
+    team = ChainedForeignKey(
+        Team,
+        chained_field="league",
+        chained_model_field="teams",
+        show_all=False,
+        auto_choose=True,
+        sort=True,
+        related_name='table_team')
     wins = models.IntegerField()
     loss = models.IntegerField()
     draw = models.IntegerField()

@@ -20,8 +20,22 @@ class Match(models.Model):
 
 class MatchData(models.Model):
     match = models.ForeignKey(Match, on_delete=models.CASCADE)
-    team_a_squad = models.ManyToManyField(Profile, related_name='team_a_squad')  # make this a "through" field
-    team_b_squad = models.ManyToManyField(Profile, related_name='team_b_squad')  # make this a "through" field
+    team_a = models.ForeignKey(Team, on_delete=models.PROTECT, related_name='test_team_a', default=None)
+    team_b = models.ForeignKey(Team, on_delete=models.PROTECT, related_name='test_team_b', default=None)
+    team_a_squad = ChainedManyToManyField(
+        Profile,
+        verbose_name='a_squad',
+        chained_field="team_a",
+        chained_model_field="team",
+        horizontal=True,
+        related_name='team_a_squad')
+    team_b_squad = ChainedManyToManyField(
+        Profile,
+        verbose_name='b_squad',
+        chained_field="team_b",
+        chained_model_field="team",
+        horizontal=True,
+        related_name='team_b_squad')
 
     def __str__(self):
         return self.match
@@ -69,7 +83,7 @@ class Publication(models.Model):
 
 class Writer(models.Model):
     name = models.CharField(max_length=255)
-    publications = models.ManyToManyField('Publication', blank=True, null=True)
+    publications = models.ManyToManyField('Publication', blank=True)
 
     def __str__(self):
         return self.name

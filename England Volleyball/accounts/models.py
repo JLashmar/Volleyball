@@ -25,8 +25,14 @@ class Position(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     club = models.ForeignKey('clubs.Club', on_delete=models.CASCADE)
+    team = models.ManyToManyField('clubs.Team')
     role = models.ManyToManyField(Role)
-    position = models.ManyToManyField(Position)
+    position = ChainedManyToManyField(
+        Position,
+        verbose_name='position',
+        chained_field="role",
+        chained_model_field="role",
+        horizontal=True)
     bio = models.TextField(max_length=500, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     # need to add qualifications for coaches & and the dates they run out if applicable
