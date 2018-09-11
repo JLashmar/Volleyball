@@ -5,11 +5,12 @@ from rest_framework.reverse import reverse as api_reverse
 
 class Club(models.Model):
     name = models.CharField(max_length=100, unique=False)
+    club_slug = models.SlugField(max_length=100, unique=True)
     address1 = models.CharField(max_length=100, blank=True, null=True)
     address2 = models.CharField(max_length=100, blank=True, null=True)
     town = models.CharField(max_length=100, blank=True, null=True)
     post_code = models.CharField(max_length=100, blank=True, null=True)
-    logo = models.ImageField(null=True)
+    logo = models.ImageField(blank=True, null=True)
 
     class Meta:
         ordering = ['-name']

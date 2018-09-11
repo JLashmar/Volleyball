@@ -3,11 +3,14 @@ from rest_framework import generics, mixins
 from articles.models import Post
 from .permissions import IsOwnerOrReadOnly
 from .serializers import PostSerializer
+from rest_framework import permissions
 
 
 class PostAPIView(mixins.CreateModelMixin, generics.ListAPIView):
     lookup_field = 'pk'
     serializer_class = PostSerializer
+    permissions_classes = (permissions.IsAuthenticatedOrReadOnly,
+                           IsOwnerOrReadOnly,)
     # queryset = Post.objects.all()
 
     def get_queryset(self):
@@ -34,7 +37,8 @@ class PostAPIView(mixins.CreateModelMixin, generics.ListAPIView):
 class PostRudView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'pk'
     serializer_class = PostSerializer
-    permissions_classes = [IsOwnerOrReadOnly]
+    permissions_classes = (permissions.IsAuthenticatedOrReadOnly,
+                           IsOwnerOrReadOnly,)
     # queryset = Post.objects.all()
 
     def get_queryset(self):

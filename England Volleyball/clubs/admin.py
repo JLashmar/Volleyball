@@ -6,6 +6,7 @@ from .models import Club, Team
 @admin.register(Club)
 class ClubAdmin(admin.ModelAdmin):
     list_display = ('name',)
+    prepopulated_fields = {'club_slug': ('name',)}
 
 
 @admin.register(Team)

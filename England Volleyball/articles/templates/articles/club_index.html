@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Index
 {% endblock title %}
 
 {% block body %}
- <div class="container">
-        hi - {{request.user}}
-
+    hi - {{request.user}}
 
 {% include "articles/_post_list.html" %}
- </div>
+
 {% endblock body %}

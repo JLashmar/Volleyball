@@ -1,0 +1,20 @@
+using the API
+
+{% extends "base.html" %}
+
+{% block title %}
+    Index
+{% endblock title %}
+
+{% block body %}
+    hi - {{request.user}}
+<ul>
+{% for g in parsedData  %}
+    <li>
+        {{g.url}} - <a href="/{{g.post_slug}}">{{g.title}}</a> - {{g.post_slug}} -------- {{all_posts.club}}
+        <li>{{g.short_description}}</li>
+        <li> {{g.body}} </li>
+    </li>
+{% endfor %}
+</ul>
+{% endblock body %}

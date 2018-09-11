@@ -12,6 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
             'url',
             'pk',
             'user',
+            'club',
             'title',
             'post_slug',
             'short_description',

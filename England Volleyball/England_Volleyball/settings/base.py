@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'sponsors',
     # Framework stuff
     'rest_framework',
+    'rest_framework_api_key', #can remove
+    'rest_framework.authtoken',
     'coreapi',
     'jquery',
     # website things
@@ -148,12 +150,32 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_cdn')
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',  # can add OrReadOnly to IsAuthenticated // IsAuthenticatedOrReadOnly
-    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        #'rest_framework.permissions.IsAdminUser',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly', #this needs changing
+        #'rest_framework_api_key.permissions.HasAPIAccess', #can remove 
+        'rest_framework.permissions.AllowAny',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-    ),
+        'rest_framework.authentication.SessionAuthentication'
+
+    )
 }
+
+
+#old permissions
+#REST_FRAMEWORK = {
+#    'DEFAULT_PERMISSION_CLASSES': (
+#        'rest_framework.permissions.IsAuthenticated',  # can add OrReadOnly to IsAuthenticated // IsAuthenticatedOrReadOnly
+#    ),
+#    'DEFAULT_AUTHENTICATION_CLASSES': (
+#        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+#        'rest_framework.authentication.SessionAuthentication',
+#        'rest_framework.authentication.BasicAuthentication',
+#        #'rest_framework.permissions.IsAdminUser',
+#        'rest_framework.authentication.TokenAuthentication',
+#    ),
+#}
+
