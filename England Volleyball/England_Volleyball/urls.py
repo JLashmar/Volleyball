@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     # web pages
     path('', include('articles.urls')),
+    path('<slug:category_slug>', include('pages.urls')),
     # admin related things
     path('admin/', admin.site.urls),
     path('chaining/', include('smart_selects.urls')),

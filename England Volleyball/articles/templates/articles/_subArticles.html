@@ -1,0 +1,5 @@
+<div class="lg-4">
+{% for post in subArticle %}
+    <li><a href="{{post.get_absolute_url}}">{{post.title}}</a> - <a href="{{post.get_club_url}}">{{post.club}}</a> </li>
+{% endfor %}
+</div>

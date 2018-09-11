@@ -16,8 +16,8 @@ class IndexView(ListView):
     def get_context_data(self, **kwargs):
         parsedData = []
         context = {'all_posts': Post.objects.all()}
-        #context['headline'] = Post.objects.exclude(headline_image='')
-        #context['top_headline'] = Post.objects.filter(headline_image__exact='')
+        context['subArticle'] = Post.objects.filter(image__exact='')
+        context['mainArticle'] = Post.objects.exclude(image='')
         #context['videos'] = VideoNews.objects.all()
         r = requests.get('http://127.0.0.1:8000/api/posts/')
         data = r.json()

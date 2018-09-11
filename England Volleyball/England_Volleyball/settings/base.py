@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'clubs',
     'fixtures',
     'leagues',
+    'pages',
     'sponsors',
     # Framework stuff
     'rest_framework',
