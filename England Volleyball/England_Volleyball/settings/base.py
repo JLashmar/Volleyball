@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'jquery',
     # website things
     'bootstrap4',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
